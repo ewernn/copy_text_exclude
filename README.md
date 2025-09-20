@@ -2,6 +2,8 @@
 
 Firefox extension for copying text from webpages while excluding unwanted portions.
 
+**Note:** Does not work on PDF files viewed in the browser.
+
 ## How to Use
 
 1. **Press `Cmd+Shift+E`** (Mac) or `Ctrl+Shift+E` (PC) → Blue border appears
@@ -22,7 +24,15 @@ Firefox extension for copying text from webpages while excluding unwanted portio
 4. Select `manifest.json` from the extension folder
 
 
-## Example
+## Example in Action
+
+### Before (Exclusion Mode Active)
+![Screenshot showing text with blue border in exclusion mode](screenshot1.jpg)
+*Blue border indicates exclusion mode is active*
+
+### After (With Exclusions Marked)
+![Screenshot showing text with strikethrough on excluded portions](screenshot2.jpg)
+*Blue highlighting shows text marked for exclusion*
 
 Text on page: `This is a paragraph with unwanted ad text in the middle.`
 
