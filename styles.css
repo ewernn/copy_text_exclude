@@ -9,11 +9,20 @@
   cursor: text !important;
 }
 
-/* Prevent dragging on images and links */
+/* Prevent clicking and dragging on interactive elements */
+.exclude-mode-active a,
+.exclude-mode-active button,
+.exclude-mode-active input,
 .exclude-mode-active img,
-.exclude-mode-active a {
+.exclude-mode-active video {
   -webkit-user-drag: none !important;
   user-drag: none !important;
+  pointer-events: none !important;
+}
+
+/* But keep text selectable */
+.exclude-mode-active a *,
+.exclude-mode-active button * {
   pointer-events: none !important;
 }
 

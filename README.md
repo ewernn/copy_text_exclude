@@ -1,60 +1,38 @@
-# Copy Text Exclude - Firefox Extension
+# Copy Text Exclude
 
-A Firefox extension that lets you copy text from webpages while excluding specific portions you don't want.
+Firefox extension for copying text from webpages while excluding unwanted portions.
 
 ## How to Use
 
-1. **Enter Exclusion Mode**: Press `Cmd+Shift+E` (Mac) or `Ctrl+Shift+E` (PC)
-   - The page border turns blue when active
+1. **Press `Cmd+Shift+E`** (Mac) or `Ctrl+Shift+E` (PC) → Blue border appears
 
-2. **Mark Text to Exclude**: Click and drag to select text you DON'T want
-   - Selected text gets strikethrough styling
-   - Select multiple portions as needed - they all stay marked
+2. **Select text to exclude** → Gets strikethrough (repeat as needed)
 
-3. **Select What to Copy**:
-   - Select the specific text/section you want to copy (it will skip the strikethrough parts)
-   - OR press `Cmd+A`/`Ctrl+A` to select all (the entire page minus strikethrough parts)
+3. **Select what to copy** or press `Cmd+A` for all
 
-4. **Copy**: Press `Cmd+C` (Mac) or `Ctrl+C` (PC)
-   - Copies your selection WITHOUT the strikethrough portions
-   - The border flashes green to confirm
-   - All exclusions automatically clear after copying
-   - Extension exits exclusion mode
+4. **Press `Cmd+C`** → Copies without the strikethrough text
 
-5. **Exit Without Copying**: Press `Escape` or `Cmd+Shift+E` again
+5. **Exit**: Press `Escape` or `Cmd+Shift+E`
 
 ## Installation
 
-### Temporary Installation (for testing):
-1. Open Firefox and navigate to `about:debugging`
-2. Click "This Firefox" on the left sidebar
+1. Open Firefox → `about:debugging`
+2. Click "This Firefox"
 3. Click "Load Temporary Add-on"
-4. Navigate to the `copy_text_exclude` folder and select `manifest.json`
-5. The extension is now installed temporarily (until Firefox restarts)
+4. Select `manifest.json` from the extension folder
 
 
 ## Example
 
-If you have a webpage with:
-```
-This is a paragraph with some unwanted advertisement text in the middle that you don't want to copy.
-```
+Text on page: `This is a paragraph with unwanted ad text in the middle.`
 
-1. Press `Cmd+Shift+E` to enter exclusion mode
-2. Select "unwanted advertisement text" (it gets strikethrough)
-3. Select the whole sentence (or press Cmd+A for entire page)
-4. Press `Cmd+C`
-
-Your clipboard will contain:
-```
-This is a paragraph with some in the middle that you don't want to copy.
-```
+After excluding "unwanted ad text" and copying:
+`This is a paragraph with in the middle.`
 
 ## Features
 
-- **Visual feedback** with strikethrough text for exclusions
-- **Mark multiple exclusions** before copying
-- **Works with partial or full page selection**
-- **Auto-clears and exits** after successful copy
-- **Clean copy** without excluded portions
-- **Privacy-focused** - Only requires active tab access, no data collection
+- Works on any website including Google search results
+- Select text in links without opening them
+- Mark multiple exclusions before copying
+- Auto-clears after copying
+- Privacy-focused - no data collection

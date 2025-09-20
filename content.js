@@ -56,12 +56,33 @@ document.addEventListener('dragstart', (e) => {
 let isMouseDown = false;
 let hasMovedMouse = false;
 
-document.addEventListener('mousedown', () => {
+// Prevent link clicks and other default behaviors in exclude mode
+document.addEventListener('click', (e) => {
+  if (excludeMode) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Prevented click in exclude mode');
+    return false;
+  }
+}, true); // Use capture phase to intercept before link handlers
+
+document.addEventListener('mousedown', (e) => {
   if (!excludeMode) return;
+
+  // Prevent default on links, buttons, etc.
+  if (e.target.tagName === 'A' ||
+      e.target.closest('a') ||
+      e.target.tagName === 'BUTTON' ||
+      e.target.closest('button')) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Prevented default on interactive element');
+  }
+
   isMouseDown = true;
   hasMovedMouse = false;
   console.log('Mouse down in exclude mode');
-});
+}, true); // Use capture phase
 
 document.addEventListener('mousemove', () => {
   if (!excludeMode || !isMouseDown) return;
